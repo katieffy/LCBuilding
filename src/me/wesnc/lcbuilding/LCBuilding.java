@@ -27,9 +27,6 @@ public class LCBuilding extends JavaPlugin
 	//thispluginvar
 	public Plugin thisPlug;
 	
-	//Codes
-	//public String CodeFileString = "plugins/LevelCraftCore/Configs/Building/codes.txt";
-	//public File CodeFile = new File("plugins/LevelCraftCore/Configs/Building/codes.txt");
 	
 	
 	@Override
@@ -43,21 +40,9 @@ public class LCBuilding extends JavaPlugin
 	public void onEnable()
 	{
 		new File("plugins/LevelCraftCore/Configs").mkdirs();
-		//new File("plugins/LevelCraftCore/Configs/Buildings").mkdirs();
 		
 		try
 		{
-			/*
-			FileInputStream fis = new FileInputStream(CodeFile);
-			DataInputStream in = new DataInputStream(fis);
-			BufferedReader br = new BufferedReader(new InputStreamReader(in));
-			String currLine;
-			while((currLine = br.readLine()) != null)
-			{
-				logger.log(Level.INFO, "[LCB] "+currLine);
-			}
-			
-			*/
 			CFGFile.createNewFile();
 		} catch(IOException ex) {}
 		
