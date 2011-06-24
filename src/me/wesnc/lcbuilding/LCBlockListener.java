@@ -111,8 +111,23 @@ public class LCBlockListener extends BlockListener
 			return;	
 		}
 		
+		//Tier 4 	= Gold, diamond and iron blocks, and ore blocks
+		//tier 4
+		if((level < this.plugin.LCConfiguration.LEVELNEEDEDFOR_TIER4) && (m == Material.GOLD_BLOCK) && (m == Material.DIAMOND_BLOCK) && (m == Material.IRON_BLOCK) && (m == Material.IRON_ORE) && (m == Material.GOLD_ORE))
+		{
+			LCChat.warn(player, this.plugin.LCConfiguration.LEVELNEEDEDFOR_TIER4_MESSAGE);
+			event.setCancelled(true);
+			return;	
+		}
 		
-		
+		//Tier 5    = Netherrack tier, Obsidian
+		//tier 5
+		if((level < this.plugin.LCConfiguration.LEVELNEEDEDFOR_TIER5) && (m == Material.OBSIDIAN) && (m == Material.NETHERRACK) && (m == Material.SOUL_SAND) && (m == Material.GLOWSTONE))
+		{
+			LCChat.warn(player, this.plugin.LCConfiguration.LEVELNEEDEDFOR_TIER5_MESSAGE);
+			event.setCancelled(true);
+			return;	
+		}
 		//TIER 0 ITEMS XP
 		if(m == Material.DIRT)
 			gained = this.plugin.LCConfiguration.PLACED_DIRT_NONGRASSED;
